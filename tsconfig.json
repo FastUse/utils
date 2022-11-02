@@ -8,5 +8,9 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/": ["packages/*"]
+    }
   },
 }
