@@ -6,6 +6,6 @@
 
 - url
 
-  [x] stringifyUrl - 字符串化 URL 参数
+  - [x] stringifyUrl - 字符串化 URL 参数
 
-  [x] parseUrl - 解析 URL 参数
+  - [ ] parseUrl - 解析 URL 参数
