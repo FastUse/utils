@@ -1,4 +1,4 @@
-import { UrlObject, StringifyUrlOptions } from './types'
+import { UrlObject, StrObject } from './types'
 
 export function removeHash(input: string): string {
   const hashStart = input.indexOf('#')
@@ -7,6 +7,17 @@ export function removeHash(input: string): string {
   }
 
   return input
+}
+
+export function getHash(url: string) {
+  let hash = ''
+  const hashStart = url.indexOf('#')
+
+  if (hashStart !== -1) {
+    hash = url.slice(hashStart)
+  }
+
+  return hash
 }
 
 export function extract(input: string): string {
@@ -40,6 +51,10 @@ export function decode(value: string) {
   return decodeURIComponent(value)
 }
 
+export function encode(value: string) {
+  return encodeURIComponent(value)
+}
+
 export function formatter(
   key: string,
   value: string | string[],
@@ -55,7 +70,7 @@ export function formatter(
 }
 
 export function parse(query: string) {
-  const ret = Object.create(null)
+  const ret: StrObject = Object.create(null)
   if (typeof query !== 'string') {
     return ret
   }
@@ -75,31 +90,40 @@ export function parse(query: string) {
 
     formatter(key, value, ret)
   }
+
+  return ret
 }
 
-export function stringify(object, options) {
-  const objectCopy = {}
+export function stringify(object: StrObject) {
+  const objectCopy: StrObject = {}
 
   for (const key of Object.keys(object)) {
     objectCopy[key] = object[key]
   }
 
   const keys = Object.keys(objectCopy)
+
+  return keys
+    .map(key => {
+      const value = object[key]
+
+      return `${encode(key)}=${encode(value)}`
+    })
+    .filter(x => x.length > 0)
+    .join('&')
 }
 
-export const stringifyUrl = (
-  object: UrlObject,
-  options?: StringifyUrlOptions
-) => {
-  options = Object.assign(
-    {
-      encode: false
-    },
-    options || {}
-  )
+export const stringifyUrl = (object: UrlObject) => {
   const url = removeHash(object.url).split('?')[0] || ''
   const queryFromUrl = extract(object.url)
   const parsedQueryFromUrl = parse(queryFromUrl)
   const query = Object.assign(parsedQueryFromUrl, object.query)
-  const queryString = exports.stringify(query, options)
+  let queryString = stringify(query)
+  if (queryString) {
+    queryString = `?${queryString}`
+  }
+
+  const hash = getHash(object.url)
+
+  return `${url}${queryString}${hash}`
 }
