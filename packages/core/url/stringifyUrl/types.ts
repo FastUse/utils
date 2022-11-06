@@ -1,8 +1,6 @@
 export interface UrlObject {
   url: string
-  query?: Record<string, any>
+  query?: Record<string, string>
 }
 
-export interface StringifyUrlOptions {
-  encode: boolean
-}
+export type StrObject = Record<string, string>
