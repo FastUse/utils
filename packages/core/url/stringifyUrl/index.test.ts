@@ -1,5 +1,15 @@
 import { expect, test } from 'vitest'
-import { removeHash, extract, splitFirst, decode, formatter } from '.'
+import {
+  removeHash,
+  getHash,
+  extract,
+  splitFirst,
+  decode,
+  formatter,
+  encode,
+  stringify,
+  stringifyUrl
+} from '.'
 
 test('splitFirst', () => {
   expect(splitFirst('', '=')).toMatchInlineSnapshot(`
@@ -25,6 +35,10 @@ test('removeHash', () => {
   expect(removeHash('https://foo/bar?foo=1')).toEqual('https://foo/bar?foo=1')
 })
 
+test('getHash', () => {
+  expect(getHash('https://bar/#/index.html')).toEqual('#/index.html')
+})
+
 test('extract', () => {
   expect(extract('https://foo?foo=1/#/bar')).toEqual('foo=1/')
   expect(extract('https://foo/#/bar?foo=1')).toEqual('')
@@ -33,6 +47,10 @@ test('extract', () => {
 
 test('decode', () => {
   expect(decode('%E5%BC%A0%E4%B8%89')).toEqual('张三')
+})
+
+test('encode', () => {
+  expect(encode('张三')).toEqual('%E5%BC%A0%E4%B8%89')
 })
 
 test('formatter', () => {
@@ -60,4 +78,37 @@ test('formatter', () => {
       "foo": "22",
     }
   `)
+})
+
+test('stringify', () => {
+  expect(stringify({ foo: '1', bar: '2' })).toMatchInlineSnapshot(
+    '"foo=1&bar=2"'
+  )
+})
+
+test('stringifyUrl', () => {
+  expect(
+    stringifyUrl({
+      url: 'https://bar/foo?foo=1',
+      query: { foo: '2', bar: '2' }
+    })
+  ).toMatchInlineSnapshot('"https://bar/foo?foo=2&bar=2"')
+  expect(
+    stringifyUrl({
+      url: 'https://foo/#/index.html',
+      query: {
+        foo: '1',
+        bar: '3'
+      }
+    })
+  ).toMatchInlineSnapshot('"https://foo/?foo=1&bar=3#/index.html"')
+
+  expect(
+    stringifyUrl({
+      url: 'https://bar/#/index.html?foo=1',
+      query: {
+        bar: '2'
+      }
+    })
+  ).toMatchInlineSnapshot('"https://bar/?bar=2#/index.html?foo=1"')
 })
