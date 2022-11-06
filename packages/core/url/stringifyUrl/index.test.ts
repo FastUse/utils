@@ -1,17 +1,23 @@
 import { expect, test } from 'vitest'
-import {
-  stringifyUrl,
-  removeHash,
-  extract,
-  splitFirst,
-  decode,
-  formatter
-} from '.'
+import { removeHash, extract, splitFirst, decode, formatter } from '.'
 
 test('splitFirst', () => {
-  expect(splitFirst('', '=')).toMatchInlineSnapshot([''])
-  expect(splitFirst('foo=2', '=')).toMatchInlineSnapshot(['foo', '2'])
-  expect(splitFirst('bar-2', '=')).toMatchInlineSnapshot(['bar-2'])
+  expect(splitFirst('', '=')).toMatchInlineSnapshot(`
+    [
+      "",
+    ]
+  `)
+  expect(splitFirst('foo=2', '=')).toMatchInlineSnapshot(`
+    [
+      "foo",
+      "2",
+    ]
+  `)
+  expect(splitFirst('bar-2', '=')).toMatchInlineSnapshot(`
+    [
+      "bar-2",
+    ]
+  `)
 })
 
 test('removeHash', () => {
@@ -32,9 +38,26 @@ test('decode', () => {
 test('formatter', () => {
   const ret = {}
   formatter('foo', '22', ret)
-  expect(ret).toMatchInlineSnapshot({ foo: '22' })
+  expect(ret).toMatchInlineSnapshot(`
+    {
+      "foo": "22",
+    }
+  `)
   formatter('bar', '33', ret)
-  expect(ret).toMatchInlineSnapshot({ foo: '22', bar: '33' })
+  expect(ret).toMatchInlineSnapshot(`
+    {
+      "bar": "33",
+      "foo": "22",
+    }
+  `)
   formatter('bar', '44', ret)
-  expect(ret).toMatchInlineSnapshot({ foo: '22', bar: ['33', '44'] })
+  expect(ret).toMatchInlineSnapshot(`
+    {
+      "bar": [
+        "33",
+        "44",
+      ],
+      "foo": "22",
+    }
+  `)
 })
