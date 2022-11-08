@@ -112,3 +112,23 @@ export function parse(query: string) {
 
   return ret
 }
+
+export function filterObject(
+  obj: StrObject,
+  predicate: string[] | ((key: string, val: string, obj: StrObject) => boolean)
+) {
+  const ret = Object.create(null)
+  const keys = Object.keys(obj)
+  const isArr = Array.isArray(predicate)
+
+  for (let i = 0; i < keys.length; i++) {
+    const key = keys[i]
+    const val = obj[key]
+
+    if (isArr ? predicate.indexOf(key) !== -1 : predicate(key, val, obj)) {
+      ret[key] = val
+    }
+  }
+
+  return ret
+}

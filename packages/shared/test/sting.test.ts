@@ -7,7 +7,8 @@ import {
   decode,
   encode,
   formatter,
-  stringify
+  stringify,
+  filterObject
 } from '../string'
 
 test('splitFirst', () => {
@@ -83,4 +84,19 @@ test('stringify', () => {
   expect(stringify({ foo: '1', bar: '2' })).toMatchInlineSnapshot(
     '"foo=1&bar=2"'
   )
+})
+
+test('filterObject', () => {
+  expect(filterObject({ foo: '1', bar: '2' }, ['foo'])).toMatchInlineSnapshot(`
+    {
+      "foo": "1",
+    }
+  `)
+
+  expect(filterObject({ foo: '1', bar: '2' }, key => key === 'bar'))
+    .toMatchInlineSnapshot(`
+    {
+      "bar": "2",
+    }
+  `)
 })
