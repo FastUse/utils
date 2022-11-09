@@ -12,5 +12,10 @@ test('parseUrl', () => {
     }
   `)
 
-  expect(parseUrl('https://foo/#/index.html?foo=1')).toMatchInlineSnapshot()
+  expect(parseUrl('https://foo/#/index.html?foo=1')).toMatchInlineSnapshot(`
+    {
+      "query": {},
+      "url": "https://foo/",
+    }
+  `)
 })
