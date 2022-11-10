@@ -8,6 +8,7 @@
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "sourceMap": true,
+    "lib": ["DOM", "ESNext"],
     "baseUrl": ".",
     "paths": {
       "@/*": ["packages/*"]
