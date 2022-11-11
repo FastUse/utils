@@ -11,3 +11,5 @@
   - [x] parseUrl - 解析 URL 参数
 
   - [x] pickUrl - 选择保留 URL 参数
+
+  - [x] excludeUrl - 移除 URL 参数
