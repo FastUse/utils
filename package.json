@@ -11,7 +11,10 @@
     "test": "vitest",
     "coverage": "vitest run --coverage",
     "test:update": "vitest -u",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
   },
   "keywords": [],
   "author": "",
@@ -34,6 +37,8 @@
     "rollup-plugin-esbuild": "^5.0.0",
     "typescript": "^4.8.4",
     "vite": "^3.2.0",
-    "vitest": "^0.24.3"
+    "vitepress": "1.0.0-alpha.20",
+    "vitest": "^0.24.3",
+    "vue": "^3.2.41"
   }
 }
