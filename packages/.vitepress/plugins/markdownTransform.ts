@@ -10,7 +10,7 @@ export function MarkdownTransform(): Plugin {
     name: 'demo-to-md',
     enforce: 'pre',
     transform(code, id) {
-      if(!id.match(/\.md$/)) return null
+      if(!id.match(/\.md$/) || id.match(/packages\/index.md/)) return null
       const [pkg, name] = id.split('/').slice(-3)
       const dirname = join(DIR_SRC, pkg, name)
       const demoPath = existsSync(join(dirname, '/demo.vue'))
