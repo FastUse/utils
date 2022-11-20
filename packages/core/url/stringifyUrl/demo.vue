@@ -1,21 +1,36 @@
 <script lang="ts" setup>
-import { ref, computed } from 'vue'
+import { reactive } from 'vue'
 import { stringifyUrl } from '.'
 
-const inputVal = ref('')
+const state = reactive({
+  foo: '',
+  bar: '',
+  urlText: ''
+})
 
 const url = window.location.href
-const urlText = computed(() =>
-  stringifyUrl({ url, query: { input: inputVal.value } })
-)
+
+function onChange() {
+  state.urlText = stringifyUrl({
+    url,
+    query: { foo: state.foo, bar: state.bar }
+  })
+}
 </script>
 
 <template>
   <div>
     <div class="flex items-center mb4">
-      <label class="mr3">input:</label>
-      <input v-model="inputVal" type="text" />
+      <label class="mr3">foo:</label>
+      <input v-model="state.foo" type="text" />
     </div>
-    <div>{{ urlText }}</div>
+    <div class="flex items-center mb4">
+      <label class="mr3">bar:</label>
+      <input v-model="state.bar" type="text" />
+    </div>
+    <div>
+      <button @click="onChange">change</button>
+    </div>
+    <div class="mt3">{{ state.urlText }}</div>
   </div>
 </template>

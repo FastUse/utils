@@ -1,5 +1,9 @@
 import { removeHash, getHash, extract, stringify, parse } from '@FastUse/shared'
-import { UrlObject } from './types'
+
+interface UrlObject {
+  url: string
+  query?: Record<string, string>
+}
 
 export const stringifyUrl = (object: UrlObject) => {
   const url = removeHash(object.url).split('?')[0] || ''
