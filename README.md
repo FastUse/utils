@@ -1,6 +1,10 @@
 # utils
 
-业务场景工具库
+业务场景工具库记录
+
+## Docs
+
+文档是借鉴 [antfu](https://github.com/antfu) 大佬的 [VueUse](https://github.com/vueuse/vueuse) 的方式来构建的。
 
 ## TODO
 
