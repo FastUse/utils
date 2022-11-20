@@ -1,7 +1,10 @@
 import { filterObject } from '@FastUse/shared'
 import { parseUrl } from '../parseUrl'
 import { stringifyUrl } from '../stringifyUrl'
-import { filterType } from './types'
+
+export type filterType =
+  | string[]
+  | ((key: string, val: string, obj: Record<string, string>) => boolean)
 
 export function pickUrl(url: string, filter: filterType) {
   const { url: _url, query } = parseUrl(url)
