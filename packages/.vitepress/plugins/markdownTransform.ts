@@ -28,10 +28,12 @@ export function MarkdownTransform(): Plugin {
 </script>
 
 ## Demo
+<ClientOnly>
+  <DemoContainer>
+    <Demo/>
+  </DemoContainer>
+</ClientOnly>`
 
-<DemoContainer>
-  <Demo/>
-</DemoContainer>`
 )
       }
       
