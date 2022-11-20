@@ -1,5 +1,8 @@
 import { pickUrl } from '../pickUrl'
-import { filterType } from './types'
+
+export type filterType =
+  | string[]
+  | ((key: string, val: string, obj?: Record<string, string>) => boolean)
 
 export function excludeUrl(url: string, filter: filterType) {
   const exclusionFilter = Array.isArray(filter)
