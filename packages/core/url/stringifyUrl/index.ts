@@ -1,4 +1,4 @@
-import { removeHash, getHash, extract, stringify, parse } from '@/shared'
+import { removeHash, getHash, extract, stringify, parse } from '@FastUse/shared'
 import { UrlObject } from './types'
 
 export const stringifyUrl = (object: UrlObject) => {

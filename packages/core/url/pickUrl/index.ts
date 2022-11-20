@@ -1,4 +1,4 @@
-import { filterObject } from '@/shared'
+import { filterObject } from '@FastUse/shared'
 import { parseUrl } from '../parseUrl'
 import { stringifyUrl } from '../stringifyUrl'
 import { filterType } from './types'

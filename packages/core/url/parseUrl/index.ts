@@ -1,4 +1,4 @@
-import { splitFirst, parse, extract } from '@/shared'
+import { splitFirst, parse, extract } from '@FastUse/shared'
 
 export function parseUrl(url: string) {
   const [url_] = splitFirst(url, '#')
