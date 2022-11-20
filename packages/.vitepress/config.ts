@@ -4,6 +4,18 @@ const UrlSideItems: DefaultTheme.SidebarItem[] = [
   {
     text: 'stringifyUrl',
     link: '/core/url/stringifyUrl/'
+  },
+  {
+    text: 'pickUrl',
+    link: '/core/url/pickUrl/'
+  },
+  {
+    text: 'parseUrl',
+    link: '/core/url/parseUrl/'
+  },
+  {
+    text: 'excludeUrl',
+    link: '/core/url/excludeUrl/'
   }
 ]
 
