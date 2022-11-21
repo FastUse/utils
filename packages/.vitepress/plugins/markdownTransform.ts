@@ -9,12 +9,13 @@ export function MarkdownTransform(): Plugin {
   return {
     name: 'demo-to-md',
     enforce: 'pre',
-    transform(code, id) {
+    transform(code: string, id: string) {
       if(!id.match(/\.md$/) || id.match(/packages\/index.md/)) return null
-      const [pkg, name] = id.split('/').slice(-3)
-      const dirname = join(DIR_SRC, pkg, name)
+      const coreIdx = id.split('/').findIndex(path => path === 'core');
+      const path = id.split('/').slice(coreIdx + 1, -1).join('/')
+      const dirname = join(DIR_SRC, path)
       const demoPath = existsSync(join(dirname, '/demo.vue'))
-      const URL = `${GITHUB_BLOB_URL}/${pkg}/${name}`
+      const URL = `${GITHUB_BLOB_URL}/${path}`
       const Links = ([
         ['Source', `${URL}/index.ts`],
         demoPath ? ['Demo', `${URL}/demo.vue`] : undefined,
