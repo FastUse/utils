@@ -1,5 +1,14 @@
 import { defineConfig, DefaultTheme } from 'vitepress'
 
+// BrowserScroll
+const BrowserScroll: DefaultTheme.SidebarItem[] = [
+  {
+    text: 'getScrollTop',
+    link: '/core/browser/scroll/getScrollTop/'
+  }
+]
+
+// URL
 const UrlSideItems: DefaultTheme.SidebarItem[] = [
   {
     text: 'stringifyUrl',
@@ -28,8 +37,12 @@ export default defineConfig({
     sidebar: {
       '/core/': [
         {
-          text: "Url",
+          text: 'Url',
           items: UrlSideItems
+        },
+        {
+          text: 'Browser',
+          items: BrowserScroll
         }
       ] 
     }
