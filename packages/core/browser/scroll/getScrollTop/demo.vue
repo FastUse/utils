@@ -13,12 +13,14 @@ function getTop() {
 
 <template>
   <div>
-    <section
-      ref="scrollRef"
-      class="h100 overflow-y-auto mb5"
-      @scroll="onScroll"
-    >
-      <div v-for="i in 8" :key="i" class="border h20 mb3">{{ i }}</div>
+    <section ref="scrollRef" class="h100 overflow-y-auto mb5">
+      <div
+        v-for="i in 8"
+        :key="i"
+        class="border h20 mb3 b-rd flex items-center justify-center"
+      >
+        {{ i }}
+      </div>
     </section>
     <section class="mb5">
       <button @click="getTop">获取</button>
