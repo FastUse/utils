@@ -3,8 +3,17 @@ import { defineConfig, DefaultTheme } from 'vitepress'
 // BrowserScroll
 const BrowserScroll: DefaultTheme.SidebarItem[] = [
   {
-    text: 'getScrollTop',
-    link: '/core/browser/scroll/getScrollTop/'
+    text: "scroll",
+    items: [
+      {
+        text: 'getScrollTop',
+        link: '/core/browser/scroll/getScrollTop/'
+      },
+      {
+        text: 'setScrollTop',
+        link: '/core/browser/scroll/setScrollTop/'
+      }
+    ]
   }
 ]
 
