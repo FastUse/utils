@@ -12,7 +12,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["packages/*"],
-      "@FastUse/shared": ["packages/shared/index.ts"],
+      "@FastUse/shared": ["packages/core/shared/index.ts"],
     },
   },
 }

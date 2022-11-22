@@ -6,7 +6,7 @@ import { MarkdownTransform } from './.vitepress/plugins/markdownTransform'
 export default defineConfig({
   resolve: {
     alias: {
-      '@FastUse/shared': resolve(__dirname, 'shared/index.ts')
+      '@FastUse/shared': resolve(__dirname, 'core/shared/index.ts')
     }
   },
   plugins: [MarkdownTransform(), Unocss()]
