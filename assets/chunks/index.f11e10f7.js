@@ -1,1 +1,0 @@
-import{f as p}from"./string.bf3ef550.js";import{p as s}from"./index.47b5af47.js";import{s as e}from"./index.8545f89a.js";function m(r,t){const{url:o,query:i}=s(r);return e({url:o,query:p(i,t)})}export{m as p};

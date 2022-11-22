@@ -1,1 +1,0 @@
-import{r as i,e as l,p as o,a as y,g}from"./string.bf3ef550.js";const c=r=>{const t=i(r.url).split("?")[0]||"",a=l(r.url),e=o(a),n=Object.assign(e,r.query);let s=y(n);s&&(s=`?${s}`);const u=g(r.url);return`${t}${s}${u}`};export{c as s};
