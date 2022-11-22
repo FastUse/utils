@@ -12,6 +12,10 @@ const BrowserScroll: DefaultTheme.SidebarItem[] = [
       {
         text: 'setScrollTop',
         link: '/core/browser/scroll/setScrollTop/'
+      },
+      {
+        text: 'scrollTopTo',
+        link: '/core/browser/scroll/scrollTopTo/'
       }
     ]
   }
