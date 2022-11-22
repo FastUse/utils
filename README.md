@@ -19,6 +19,8 @@
   - [x] excludeUrl - 移除 URL 参数
 
 - browser
-
-  - [x] scrollTopTo - 移动滚动条竖直方向位置
-  - [x] scrollLeftTo - 移动滚动条横向位置
+  - scroll
+    - [x] getScrollTop - 获取滚动条的顶部距离
+    - [x] setScrollTop - 设置滚动条的顶部距离
+    - [x] scrollTopTo - 顺滑移动滚动条竖直方向位置
+    - [x] scrollLeftTo - 顺滑移动滚动条横向位置
