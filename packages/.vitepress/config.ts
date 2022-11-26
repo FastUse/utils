@@ -22,6 +22,15 @@ const BrowserScroll: DefaultTheme.SidebarItem[] = [
         link: '/core/browser/scroll/scrollLeftTo/'
       }
     ]
+  },
+  {
+    text: 'touch',
+    items: [
+      {
+        text: 'drag',
+        link: '/core/browser/touch/drag/'
+      }
+    ]
   }
 ]
 
