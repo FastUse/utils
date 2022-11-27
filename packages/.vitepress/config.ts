@@ -29,6 +29,10 @@ const BrowserScroll: DefaultTheme.SidebarItem[] = [
       {
         text: 'drag',
         link: '/core/browser/touch/drag/'
+      },
+      {
+        text: 'pinch',
+        link: '/core/browser/touch/pinch/'
       }
     ]
   }
