@@ -20,6 +20,10 @@ const BrowserScroll: DefaultTheme.SidebarItem[] = [
       {
         text: 'scrollLeftTo',
         link: '/core/browser/scroll/scrollLeftTo/'
+      },
+      {
+        text: 'scrollToLower',
+        link: '/core/browser/scroll/scrollToLower/'
       }
     ]
   },
