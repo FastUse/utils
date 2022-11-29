@@ -24,6 +24,7 @@
     - [x] setScrollTop - 设置滚动条的顶部距离
     - [x] scrollTopTo - 顺滑移动滚动条竖直方向位置
     - [x] scrollLeftTo - 顺滑移动滚动条横向位置
+    - [x] scrollToLower - 滚动到底部触发
 
   - touch
     - [x] drag - 移动端拖拽事件
