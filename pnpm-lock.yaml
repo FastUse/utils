@@ -19,6 +19,7 @@ specifiers:
   rollup-plugin-esbuild: ^5.0.0
   typescript: ^4.8.4
   unocss: ^0.46.5
+  vconsole: ^3.15.0
   vite: ^3.2.0
   vitepress: 1.0.0-alpha.20
   vitest: ^0.24.3
@@ -43,6 +44,7 @@ devDependencies:
   rollup-plugin-esbuild: 5.0.0_rollup@3.3.0
   typescript: 4.9.3
   unocss: 0.46.5_rollup@3.3.0+vite@3.2.4
+  vconsole: 3.15.0
   vite: 3.2.4_less@4.1.3
   vitepress: 1.0.0-alpha.20_less@4.1.3
   vitest: 0.24.5_e6vslllv6ev4jkrppp6sewqjkq
@@ -219,6 +221,13 @@ packages:
     hasBin: true
     dependencies:
       '@babel/types': 7.20.2
+    dev: true
+
+  /@babel/runtime/7.20.6:
+    resolution: {integrity: sha512-Q+8MqP7TiHMWzSfwiJwXCjyf4GYA4Dgw3emg/7xmwsdLJOZUp+nMqcOwOzzYheuM1rhDu8FSj2l0aoMygEuXuA==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      regenerator-runtime: 0.13.11
     dev: true
 
   /@babel/types/7.20.2:
@@ -1286,6 +1295,16 @@ packages:
     resolution: {integrity: sha512-1j20GZTsvKNkc4BY3NpMOM8tt///wY3FpIzozTOFO2ffuZcV61nojHXVKIy3WM+7ADCy5FVhdZYHYDdgTU0yJw==}
     dependencies:
       is-what: 3.14.1
+    dev: true
+
+  /copy-text-to-clipboard/3.0.1:
+    resolution: {integrity: sha512-rvVsHrpFcL4F2P8ihsoLdFHmd404+CMg71S756oRSeQgqk51U3kicGdnvfkrxva0xXH92SjGS62B0XIJsbh+9Q==}
+    engines: {node: '>=12'}
+    dev: true
+
+  /core-js/3.26.1:
+    resolution: {integrity: sha512-21491RRQVzUn0GGM9Z1Jrpr6PNPxPi+Za8OM9q4tksTSnlbXXGKK1nXNg/QvwFYettXvSX6zWKCtHHfjN4puyA==}
+    requiresBuild: true
     dev: true
 
   /cross-spawn/7.0.3:
@@ -2872,6 +2891,10 @@ packages:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
     dev: true
 
+  /mutation-observer/1.0.3:
+    resolution: {integrity: sha512-M/O/4rF2h776hV7qGMZUH3utZLO/jK7p8rnNgGkjKUw8zCGjRQPxB8z6+5l8+VjRUQ3dNYu4vjqXYLr+U8ZVNA==}
+    dev: true
+
   /nanoid/3.3.4:
     resolution: {integrity: sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -3165,6 +3188,10 @@ packages:
     engines: {node: '>=8.10.0'}
     dependencies:
       picomatch: 2.3.1
+    dev: true
+
+  /regenerator-runtime/0.13.11:
+    resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}
     dev: true
 
   /regexp.prototype.flags/1.4.3:
@@ -3648,6 +3675,15 @@ packages:
 
   /util-deprecate/1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
+    dev: true
+
+  /vconsole/3.15.0:
+    resolution: {integrity: sha512-8hq7wabPcRucSWQyN7/1tthMawP9JPvM95zgtMHpPknMMMCKj+abpoK7P7oKK4B0qw58C24Mdvo9+raUdpHyVQ==}
+    dependencies:
+      '@babel/runtime': 7.20.6
+      copy-text-to-clipboard: 3.0.1
+      core-js: 3.26.1
+      mutation-observer: 1.0.3
     dev: true
 
   /vite/3.2.4_less@4.1.3:
