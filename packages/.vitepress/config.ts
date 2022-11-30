@@ -37,6 +37,10 @@ const BrowserScroll: DefaultTheme.SidebarItem[] = [
       {
         text: 'pinch',
         link: '/core/browser/touch/pinch/'
+      },
+      {
+        text: 'rotate',
+        link: '/core/browser/touch/rotate/'
       }
     ]
   }
