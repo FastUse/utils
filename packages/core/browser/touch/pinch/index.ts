@@ -24,8 +24,8 @@ export function pinch(options: IPinchOptions) {
     if (ev.touches.length > 1) {
       const vector1 = getVector(getPoint(ev, 0), getPoint(ev, 1))
       pinchStartLength = getLength(vector1)
+      onPinchStart?.(ev)
     }
-    onPinchStart?.(ev)
   }
 
   function onTouchmove(ev: TouchEvent) {
