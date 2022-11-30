@@ -29,3 +29,4 @@
   - touch
     - [x] drag - 移动端拖拽事件
     - [x] pinch - 移动端缩放事件
+    - [x] rotate - 移动换旋转事件
