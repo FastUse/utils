@@ -1,4 +1,8 @@
-export const ua = window.navigator.userAgent
+const isClient = typeof window !== 'undefined'
+
+export const defaultWindow = /* #__PURE__ */ isClient ? window : undefined
+
+export const ua = defaultWindow?.navigator.userAgent || ''
 
 /**
  * 是否安卓设备
