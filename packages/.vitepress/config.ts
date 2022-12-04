@@ -43,6 +43,15 @@ const BrowserScroll: DefaultTheme.SidebarItem[] = [
         link: '/core/browser/touch/rotate/'
       }
     ]
+  },
+  {
+    text: 'systemInfo',
+    items: [
+      {
+        text: 'getOs',
+        link: '/core/browser/systemInfo/getOs/',
+      }
+    ]
   }
 ]
 
