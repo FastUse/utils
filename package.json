@@ -24,6 +24,7 @@
     "@rollup/plugin-json": "^5.0.1",
     "@study-sea/eslint-config-vue": "^0.0.8",
     "@types/jsdom": "^20.0.1",
+    "@types/ua-parser-js": "^0.7.36",
     "@vitest/ui": "^0.25.1",
     "consola": "^2.15.3",
     "esbuild-register": "^3.4.1",
@@ -43,5 +44,8 @@
     "vitepress": "1.0.0-alpha.20",
     "vitest": "^0.24.3",
     "vue": "^3.2.41"
+  },
+  "dependencies": {
+    "ua-parser-js": "^1.0.32"
   }
 }
