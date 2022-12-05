@@ -37,7 +37,7 @@ export const isIPadOS = isMac && window.navigator.maxTouchPoints > 0
 /**
  * 获取系统版本
  */
-export function osVersionMatch(exp: RegExp) {
+export function uaMatch(exp: RegExp) {
   return ua.match(exp) || ''
 }
 
@@ -54,4 +54,23 @@ export function getOsTheme() {
   } else {
     return ''
   }
+}
+
+/**
+ * 生成唯一id
+ */
+const UUID_KEY = 'DEVICE_UUID'
+const storage: any =
+  defaultWindow?.localStorage || defaultWindow?.sessionStorage || {}
+let deviceId: string | undefined
+
+export function uuid() {
+  deviceId = deviceId || storage[UUID_KEY]
+  if (!deviceId) {
+    deviceId = Date.now() + '' + Math.floor(Math.random() * 1e7)
+    try {
+      storage[UUID_KEY] = deviceId
+    } catch (error) {}
+  }
+  return deviceId
 }
