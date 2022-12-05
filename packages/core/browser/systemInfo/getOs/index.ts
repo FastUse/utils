@@ -1,5 +1,5 @@
 import {
-  osVersionMatch,
+  uaMatch,
   isIOS,
   isAndroid,
   isIPadOS,
@@ -24,14 +24,14 @@ export function getOs(): IOsReturnType {
   let osVersion = ''
   if (isIOS) {
     osName = 'iOS'
-    const osVersionFind = osVersionMatch(/OS\s([\w_]+)\slike/)
+    const osVersionFind = uaMatch(/OS\s([\w_]+)\slike/)
     if (osVersionFind) {
       osVersion = osVersionFind[1].replace(/_/g, '.')
     }
   } else if (isAndroid) {
     osName = 'Android'
     // eslint-disable-next-line no-useless-escape
-    const osVersionFind = osVersionMatch(/Android[\s/]([\w\.]+)[;\s]/)
+    const osVersionFind = uaMatch(/Android[\s/]([\w\.]+)[;\s]/)
     if (osVersionFind) {
       // eslint-disable-next-line prefer-destructuring
       osVersion = osVersionFind[1]
@@ -42,7 +42,7 @@ export function getOs(): IOsReturnType {
   } else if (isWindows || isMac || isLinux) {
     osName = 'PC'
     // eslint-disable-next-line prefer-destructuring
-    const osVersionFind = (osVersionMatch(/\((.+?)\)/) as RegExpMatchArray)[1]
+    const osVersionFind = (uaMatch(/\((.+?)\)/) as RegExpMatchArray)[1]
     if (isWindows) {
       osName = 'Windows'
       osVersion = ''
