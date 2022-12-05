@@ -48,6 +48,10 @@ const BrowserScroll: DefaultTheme.SidebarItem[] = [
     text: 'systemInfo',
     items: [
       {
+        text: 'parserUa',
+        link: '/core/browser/systemInfo/parserUa/',
+      },
+      {
         text: 'getOs',
         link: '/core/browser/systemInfo/getOs/',
       },
