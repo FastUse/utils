@@ -1,7 +1,7 @@
 import { defineConfig, DefaultTheme } from 'vitepress'
 
-// BrowserScroll
-const BrowserScroll: DefaultTheme.SidebarItem[] = [
+// Browser
+const Browser: DefaultTheme.SidebarItem[] = [
   {
     text: "scroll",
     items: [
@@ -93,6 +93,9 @@ export default defineConfig({
   base: '/utils/',
   themeConfig: {
     logo: 'logo.svg',
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/FastUse/utils' }
+    ],
     sidebar: {
       '/core/': [
         {
@@ -101,7 +104,7 @@ export default defineConfig({
         },
         {
           text: 'Browser',
-          items: BrowserScroll
+          items: Browser
         }
       ] 
     }
