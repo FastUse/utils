@@ -58,6 +58,10 @@ const BrowserScroll: DefaultTheme.SidebarItem[] = [
       {
         text: 'getDevice',
         link: '/core/browser/systemInfo/getDevice/',
+      },
+      {
+        text: 'getBrowser',
+        link: '/core/browser/systemInfo/getBrowser/'
       }
     ]
   }
