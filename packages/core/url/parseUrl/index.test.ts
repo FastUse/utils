@@ -12,9 +12,12 @@ test('parseUrl', () => {
     }
   `)
 
-  expect(parseUrl('https://foo/#/index.html?foo=1')).toMatchInlineSnapshot(`
+  expect(parseUrl('https://foo/#/index.html?foo=1', { removeHash: false }))
+    .toMatchInlineSnapshot(`
     {
-      "query": {},
+      "query": {
+        "foo": "1",
+      },
       "url": "https://foo/",
     }
   `)

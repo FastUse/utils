@@ -37,8 +37,10 @@ export function getHash(url: string) {
   return hash
 }
 
-export function extract(input: string): string {
-  input = removeHash(input)
+export function extract(input: string, options = { removeHash: true }): string {
+  if (options.removeHash) {
+    input = removeHash(input)
+  }
   const queryStart = input.indexOf('?')
   if (queryStart === -1) {
     return ''
