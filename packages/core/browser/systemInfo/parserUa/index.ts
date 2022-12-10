@@ -1,7 +1,7 @@
 import UAParser from 'ua-parser-js'
-import { ua } from '../utils/index'
+import { ua as defaultUa } from '../utils/index'
 
-const parser = new UAParser(ua)
-export function parserUa() {
+export function parserUa(ua = defaultUa) {
+  const parser = new UAParser(ua)
   return parser.getResult()
 }
