@@ -43,3 +43,5 @@
     - [x] getDevice - 获取设备信息
     - [x] parserUa - 解析设备 user-agent
     - [x] getBrowser - 获取浏览器信息
+
+- validate
